@@ -1,0 +1,27 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "debug",
+      "binaryDir": "${workspaceFolder}/build",
+      "generator": "Unix Makefiles",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_CXX_FLAGS_INIT": "-O3 -Werror -Wall -Wextra -pedantic -Wshadow -Wpointer-arith -Wcast-qual -Wcast-align -Wconversion -Wunused -Wold-style-cast -Wsign-conversion -Wimplicit-fallthrough -Wwrite-strings -Wswitch-default -Wswitch-enum -Wstrict-overflow=5 -Wundef -Wformat=2 -Wnon-virtual-dtor -Woverloaded-virtual -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wuseless-cast -Wdouble-promotion -Wfloat-equal -Wredundant-decls -Wtrampolines -D_FORTIFY_SOURCE=2 -fasynchronous-unwind-tables -fno-delete-null-pointer-checks -fno-strict-overflow -fno-strict-aliasing -fsanitize=address -fsanitize=undefined -fsanitize=float-divide-by-zero -fsanitize=float-cast-overflow -D_GLIBCXX_SANITIZE_VECTOR -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-common -fsanitize=pointer-compare -fsanitize=pointer-subtract"
+      },
+      "environment": {
+        "ASAN_OPTIONS": "abort_on_error=1:fast_unwind_on_malloc=0:strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1:detect_invalid_pointer_pairs=1",
+        "UBSAN_OPTIONS": "print_stacktrace=1"
+      }
+    },
+    {
+      "name": "release",
+      "binaryDir": "${workspaceFolder}/build/release",
+      "generator": "Unix Makefiles",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}
